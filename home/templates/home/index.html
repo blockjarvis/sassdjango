@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <p>agora vai!</p>
+<!-- TradingView Widget BEGIN -->
+    <div class="tradingview-widget-container">
+    <div id="tradingview_72393"></div>
+    <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    <script type="text/javascript">
+    new TradingView.widget(
+    {
+    "symbol": "FOREXCOM:XAUGBP",
+    "timezone": "Etc/UTC",
+    "theme": "light",
+    "style": "1",
+    "locale": "en",
+    "toolbar_bg": "#f1f3f6",
+    "enable_publishing": false,
+    "range": "12M",
+    "allow_symbol_change": false,
+    "save_image": false,
+    "hide_top_toolbar": true,
+    "container_id": "tradingview_72393"
+    }
+    );
+    </script>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <div class="bordertest"><p>test</p><img src="{{ MEDIA_URL }}yenas.png" alt="{{ blog.name }}"></div>
+
+    <!-- ===== Social Media ==== -->
+    <div class="row text-center">
+        <a href="https://www.youtube.com/" class="buttonsm" target="_blank"><i class="fab fa-youtube-square fa-lg"></i>   YOUTUBE</a>
+        <a href="https://instagram.com/" class="buttonsm" target="_blank"><i class="fab fa-instagram fa-lg"></i>   INSTAGRAM</a>
+        <a href="https://twitter.com/" class="buttonsm" target="_blank"><i class="fab fa-twitter-square fa-lg"></i>   TWITTER</a>
+        <a href="https://www.facebook.com/" class="buttonsm" target="_blank"><i class="fab fa-facebook fa-lg"></i>   FACEBOOK</a>
+    </div>  
+
+{% endblock %}
