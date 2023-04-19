@@ -1,7 +1,72 @@
-* {
-  box-sizing: border-box;
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #343a40;
+  color: #ffffff;
+  padding-left: 0px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  height: 3rem;
+  /* Responsive styles */
+}
+.navbar .logo {
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 2px;
+  margin-right: 100px;
+}
+.navbar .nav-menu {
+  display: flex;
+  list-style: none;
   margin: 0;
   padding: 0;
+}
+.navbar .nav-menu li {
+  margin: 0 10px;
+}
+.navbar .nav-menu li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.navbar .nav-menu li a:hover {
+  color: #ca9200;
+}
+@media screen and (max-width: 768px) {
+  .navbar .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: #343a40;
+  }
+  .navbar .nav-menu li {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+  }
+  .navbar .nav-toggle {
+    display: block;
+    font-size: 1.5rem;
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .navbar.responsive .nav-menu {
+    display: block;
+  }
+}
+@media screen and (min-width: 769px) {
+  .navbar .nav-toggle {
+    display: none;
+  }
 }
 
 body {
@@ -9,12 +74,62 @@ body {
 }
 
 p {
-  color: aqua;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #000000;
+}
+
+main {
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 #tradingview_72393 > div {
   width: 100%;
   margin: 0 auto;
-  border: 4px solid #595959;
+  border: 4px solid #343a40;
+  margin-top: 1000px;
   display: block;
+}
+
+.cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+}
+.cards__card {
+  background-color: #f2f2f2;
+  padding: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+}
+.cards__card button {
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.content {
+  flex: 2;
+  padding: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    display: none;
+  }
 }/*# sourceMappingURL=base.css.map */

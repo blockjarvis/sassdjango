@@ -1,23 +1,69 @@
-@import './variables';
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+@import 'config';
+@import 'variables';
+@import 'menu';
 
 body {
-    background-color: $primary-color;
+  background-color: $primary-color;
 }
 
 p {
-    color: aqua;
+  @include primaryFont;
+  color: map-get($text-colors, primary);
+}
+
+main {
+	display: flex;
+	flex-wrap: nowrap;
 }
 
 #tradingview_72393 > div {
-    width: 100%;
-    margin: 0 auto;
-    border: 4px solid 
-    #595959;
-    display: block;
+  width: 100%;
+  margin: 0 auto;
+  border: 4px solid 
+  $secondary-color;
+  margin-top: 1000px;
+  display: block;
+}
+
+.cards {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 5rem;
+
+  &__card {
+    background-color: $container-bg;
+    padding: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+
+    & button {
+      background-color: #333;
+      color: #fff;
+      border-radius: 5px;
+      padding: 0.5rem 1rem;
+      margin-top: 1rem;
+      cursor: pointer;
+    }
+  }
+}
+
+.content {
+  flex: 2;
+  padding: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    display: none;
+  }
 }

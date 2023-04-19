@@ -9,13 +9,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     {% endblock %}
 
-    {% block extra_meta %}
-    {% endblock %}
-
     {% block corecss %}
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+      
     {% endblock %}    
 
     <title>{% block title %}{% endblock %}</title>
@@ -23,13 +22,7 @@
 </head>
 <body>
     <header>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
+        {% include 'includes/main-nav.html' %}
     </header>
     <main>
         <p>hello world!</p>
@@ -37,7 +30,13 @@
         {% endblock %}
     </main>
     <footer>
-        <p>&copy; {{ year }} My Website</p>
+    <!-- ===== Social Media ==== -->
+        <div class="row text-center">
+            <a href="https://www.youtube.com/" class="buttonsm" target="_blank"><i class="fab fa-youtube-square fa-lg"></i>   YOUTUBE</a>
+            <a href="https://instagram.com/" class="buttonsm" target="_blank"><i class="fab fa-instagram fa-lg"></i>   INSTAGRAM</a>
+            <a href="https://twitter.com/" class="buttonsm" target="_blank"><i class="fab fa-twitter-square fa-lg"></i>   TWITTER</a>
+            <a href="https://www.facebook.com/" class="buttonsm" target="_blank"><i class="fab fa-facebook fa-lg"></i>   FACEBOOK</a>
+        </div>  
     </footer>
 </body>
 </html>
