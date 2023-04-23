@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import JsonResponse
 import requests
 
+
 # Create your views here.
 
 
@@ -16,16 +17,31 @@ class ApiError(Exception):
 
 
 def metal_api(request):
-    base_currency = 'USD'
-    symbol = 'XAU' 
-    endpoint = 'latest'
-    access_key = 'od07ua0018t61i6450d7kgch0bz2b2nxlmw4cat353v0p6orjm1bq366zfe2'
+    base_currency = 'GBP'
+    symbol = 'XAU,XAG,XPT,EUR'
+    access_key = '1350778cbe17f00dcddec0f352adadf0'
 
     resp = requests.get(
-        'https://metals-api.com/api/'+endpoint+'?access_key='+access_key+'&base='+base_currency+'&symbols='+symbol)
+        'https://api.metalpriceapi.com/v1/latest'+'?api_key='+access_key+'&base='+base_currency+'&currencies='+symbol)
     if resp.status_code != 200:
         # This means something went wrong.
-        raise ApiError('GET /'+endpoint+'/ {}'.format(resp.status_code))
+        raise ApiError('GET // {}'.format(resp.status_code))
 
     data = resp.json()
-    return JsonResponse(data)
+    rates = data['rates']    
+    rates_eur = remove_decimal(get_currency(rates.copy(),'EUR'))
+    rates_gbp = remove_decimal(rates)
+
+    return render(request, 'home/metal_api.html', {'GBP': rates_gbp, 'EUR': rates_eur,})
+
+def get_currency(rates, base_currency):
+    base_rate = rates[base_currency]   
+    for r in rates.keys():
+        rates[r] = rates[r]/base_rate
+    
+    return rates
+
+def remove_decimal(rates):
+    for s in rates.keys():
+        rates[s] = float('%.2f'%(1/rates[s]))
+    return rates

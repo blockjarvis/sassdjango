@@ -24,12 +24,22 @@
     <table>
       <thead>
         <tr>
-          <th>Currency</th>
+          <th>Pound</th>
           <th>Rate</th>
         </tr>
       </thead>
       <tbody>
-      {% for currency, rate in rates.items %}
+      {% for currency, rate in GBP.items %}
+        <tr>
+          <td>{{ currency }}</td>
+          <td>{{ rate }}</td>
+        </tr>
+      {% endfor %}
+      <tr>
+        <th>Euro</th>
+        <th></th>
+      </tr>
+      {% for currency, rate in EUR.items %}
         <tr>
           <td>{{ currency }}</td>
           <td>{{ rate }}</td>
