@@ -1,14 +1,22 @@
 {% load static %}
+
 <div class="topbar">
-  <button id="dropdown-btn">Click me</button>
+  <button id="dropdown-btn"><p id="selectedCountry"></p><i class="fa-solid fa-sort-down"></i></button>
   <div class="dropdown-container">
     <ul>
-      <li>Option 1</li>
-      <li>Option 2</li>
-      <li>Option 3</li>
+      <li><a href="{% url 'home' %}" onclick="selectCountry('United Kingdom')">United Kingdom</a></li>
+
+      <li><a href="{% url 'pthome' %}" onclick="selectCountry('Portugal')">Portugal</a></li>
     </ul>
   </div>
 </div>
+
+<script>
+  var selectedCountry = localStorage.getItem("selectedCountry");
+  if (selectedCountry) {
+    document.getElementById("selectedCountry").textContent = selectedCountry;
+  }
+</script>
 
 {% block postloadjs %}
         <script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>

@@ -1,51 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Metal API Data</title>
-    <style>
-      /* Table styles */
-      table {
-        border-collapse: collapse;
-        width: 100%;
-        text-align: left;
-      }
-      th, td {
-        padding: 8px;
-        border: 1px solid #ddd;
-      }
-      th {
-        background-color: #f2f2f2;
-        font-weight: bold;
-      }
-    </style>
-  </head>
-  <body>
-    <h1>Metal API Data</h1>
-    <table>
-      <thead>
-        <tr>
-          <th>Pound</th>
-          <th>Rate</th>
-        </tr>
-      </thead>
-      <tbody>
-      {% for currency, rate in GBP.items %}
-        <tr>
-          <td>{{ currency }}</td>
-          <td>£{{ rate }}</td>
-        </tr>
-      {% endfor %}
-      <tr>
-        <th>Euro</th>
-        <th></th>
-      </tr>
-      {% for currency, rate in EUR.items %}
-        <tr>
-          <td>{{ currency }}</td>
-          <td>€{{ rate }}</td>
-        </tr>
-      {% endfor %}
-      </tbody>
-    </table>
-  </body>
-</html>
+<h1>Metal API Data</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Pound</th>
+      <th>Rate</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for currency, rate in GBP.items %}
+    <tr>
+      <td>{{ currency }}</td>
+      <td>£{{ rate }}</td>
+    </tr>
+  {% endfor %}
+  <tr>
+    <th>Euro</th>
+    <th></th>
+  </tr>
+  {% for currency, rate in EUR.items %}
+    <tr>
+      <td>{{ currency }}</td>
+      <td>€{{ rate }}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>

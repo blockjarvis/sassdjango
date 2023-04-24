@@ -11,6 +11,11 @@ def index(request):
 
     return render(request, 'home/index.html')
 
+def ptindex(request):
+    """ A view to return the index page """
+
+    return render(request, 'home/ptindex.html')
+
 class ApiError(Exception):
     def __init__(self, message):
         self.message = message
