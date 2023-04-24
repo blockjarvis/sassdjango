@@ -19,6 +19,10 @@ class ApiError(Exception):
 def metal_api(request):
     base_currency = 'GBP'
     symbol = 'XAU,XAG,XPT,EUR'
+    names = {'XAU' : 'Gold',
+             'XAG' : 'Silver',
+             'XPT' : 'Platinum' }
+    
     access_key = '1350778cbe17f00dcddec0f352adadf0'
 
     resp = requests.get(
@@ -28,9 +32,12 @@ def metal_api(request):
         raise ApiError('GET // {}'.format(resp.status_code))
 
     data = resp.json()
-    rates = data['rates']    
+    rates = data['rates']
+    rates = rename(rates, names)  
     rates_eur = remove_decimal(get_currency(rates.copy(),'EUR'))
     rates_gbp = remove_decimal(rates)
+    rates_eur.pop('EUR')
+    rates_gbp.pop('EUR')
 
     return render(request, 'home/metal_api.html', {'GBP': rates_gbp, 'EUR': rates_eur,})
 
@@ -44,4 +51,9 @@ def get_currency(rates, base_currency):
 def remove_decimal(rates):
     for s in rates.keys():
         rates[s] = float('%.2f'%(1/rates[s]))
+    return rates
+
+def rename(rates, names):
+    for key in names:
+        rates[names[key]] = rates.pop(key)
     return rates

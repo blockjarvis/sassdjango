@@ -3,11 +3,10 @@
   background-color: $secondary-color;
   color: map-get($text-colors, secondary);
   padding-left: 0px;
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 1;
   height: 3rem;
   
   & .logo {

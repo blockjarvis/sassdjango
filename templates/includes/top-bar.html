@@ -1,0 +1,15 @@
+{% load static %}
+<div class="topbar">
+  <button id="dropdown-btn">Click me</button>
+  <div class="dropdown-container">
+    <ul>
+      <li>Option 1</li>
+      <li>Option 2</li>
+      <li>Option 3</li>
+    </ul>
+  </div>
+</div>
+
+{% block postloadjs %}
+        <script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>
+{% endblock %}
