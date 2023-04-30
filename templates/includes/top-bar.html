@@ -1,12 +1,12 @@
 {% load static %}
 
 <div class="topbar">
-  <button id="dropdown-btn"><p id="selectedCountry"></p><i class="fa-solid fa-sort-down"></i></button>
+  <button id="dropdown-btn"><span class="fa-regular fa-flag"></span><p id="selectedCountry" ></p><span class="fa-solid fa-sort-down"></span></button>
   <div class="dropdown-container">
     <ul>
-      <li><a href="{% url 'home' %}" onclick="selectCountry('United Kingdom')">United Kingdom</a></li>
+      <li><a href="{% url 'home' %}" onclick="selectCountry('United Kingdom')"><span class="fa-regular fa-flag"></span> United Kingdom</a></li>
 
-      <li><a href="{% url 'pthome' %}" onclick="selectCountry('Portugal')">Portugal</a></li>
+      <li><a href="{% url 'pthome' %}" onclick="selectCountry('Portugal')"><span class="fa-regular fa-flag"></span> Portugal</a></li>
     </ul>
   </div>
 </div>
