@@ -18,13 +18,14 @@ main {
 	flex-wrap: nowrap;
 }
 
-#tradingview_72393 > div {
+#tradingview_72393  > div {
   width: 100%;
   margin: 0 auto;
   border: 4px solid 
   $secondary-color;
   margin-top: 1000px;
   display: block;
+  aspect-ratio: 16/9;
 }
 
 .cards {
