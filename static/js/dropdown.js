@@ -11,3 +11,10 @@ function selectCountry(country) {
   localStorage.setItem("selectedCountry", country);
   document.getElementById("selectedCountry").textContent = country;
 }
+
+
+window.addEventListener('click', (event) => {
+  if (!event.target.matches('.dropdown-container') && !event.target.matches('.dropdown-container *') && !event.target.matches('#dropdown-btn') && !event.target.matches('#dropdown-btn *')) {
+    dropdownContainer.classList.remove('show');
+  }
+});
