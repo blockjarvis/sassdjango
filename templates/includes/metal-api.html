@@ -1,29 +1,31 @@
 {% load static %}
 
-<h1>Metal API Data</h1>
-<table>
-    <thead>
-      <tr>
-        <th>Pound</th>
-        <th>Rate</th>
-      </tr>
-    </thead>
-    <tbody>
-        {% for currency, rate in GBP.items %}
-          <tr>
-            <td>{{ currency }}</td>
-            <td>£{{ rate }}</td>
-          </tr>
-        {% endfor %}
+<div class="metalapi">
+  <img src="{% static 'media/logo.png' %}">
+  <table>
+      <thead>
         <tr>
-          <th>Euro</th>
-          <th></th>
+          <th>Pound</th>
+          <th>Ounces</th>
         </tr>
-        {% for currency, rate in EUR.items %}
+      </thead>
+      <tbody>
+          {% for currency, rate in GBP.items %}
+            <tr>
+              <td>{{ currency }}</td>
+              <td>£{{ rate }}</td>
+            </tr>
+          {% endfor %}
           <tr>
-            <td>{{ currency }}</td>
-            <td>€{{ rate }}</td>
+            <th>Euro</th>
+            <th></th>
           </tr>
-        {% endfor %}
-      </tbody>      
-</table>
+          {% for currency, rate in EUR.items %}
+            <tr>
+              <td>{{ currency }}</td>
+              <td>€{{ rate }}</td>
+            </tr>
+          {% endfor %}
+        </tbody>      
+  </table>
+</div>

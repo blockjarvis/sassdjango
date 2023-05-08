@@ -42,7 +42,7 @@
   .navbar .nav-menu {
     display: none;
     position: absolute;
-    top: 60px;
+    top: 400px;
     left: 0;
     width: 100%;
     background-color: #343a40;
@@ -70,13 +70,12 @@
 
 /* Dropdown container styles */
 .topbar {
-  margin-bottom: 100px;
   background-color: #f2f2f2;
   color: #ffffff;
   position: static;
-  padding-left: 2rem;
   width: 100%;
   height: 3rem;
+  margin-bottom: 1rem;
   /* Button styles */
 }
 .topbar #dropdown-btn {
@@ -101,7 +100,7 @@
   z-index: 1;
   background-color: #ffffff;
   border-radius: 3px;
-  border: 1px solid #343a40;
+  border: 2px solid #343a40;
 }
 .dropdown-container ul {
   border-top: 1px solid;
@@ -126,6 +125,24 @@
   display: block;
 }
 
+.metalapi {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.metalapi img {
+  width: 150px;
+  height: 100px;
+}
+
+.metalapi table {
+  width: 50%;
+  height: 200px;
+  margin-right: 2rem;
+  margin-left: 2rem;
+}
+
 table {
   border-collapse: collapse;
   width: 100%;
@@ -134,7 +151,6 @@ table {
 
 th, td {
   padding: 8px;
-  border: 1px solid #ddd;
 }
 
 th {

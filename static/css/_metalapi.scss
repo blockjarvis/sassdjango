@@ -1,3 +1,21 @@
+.metalapi {
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.metalapi img {
+    width: 150px;	
+    height: 100px;
+}
+
+.metalapi table {
+    width: 50%;
+    height: 200px;
+    margin-right: 2rem;
+    margin-left: 2rem;
+}
+    
 table {
     border-collapse: collapse;
     width: 100%;
@@ -6,7 +24,6 @@ table {
 
 th, td {
     padding: 8px;
-    border: 1px solid #ddd;
 }
 
 th {
