@@ -13,6 +13,7 @@ body {
 p {
   @include primaryFont;
   color: map-get($text-colors, primary);
+  line-height: 2;
 }
 
 main {
@@ -51,24 +52,41 @@ main {
     height: 200px;
     text-align: center;
 
-    & button {
-      background-color: #333;
-      color: #fff;
-      border-radius: 5px;
-      padding: 0.5rem 1rem;
-      margin-top: 1rem;
-      cursor: pointer;
+    & a {
+      @include primaryButton;
+      text-decoration: none;
+      margin-bottom: 15px;
     }
   }
 }
 
 .content {
   flex: 2;
-  padding: 5rem;
+  padding: 4rem;
 }
 
 @media screen and (max-width: 768px) {
   .cards {
     display: none;
   }
+}
+
+#main-footer {
+  @include flex-center;
+  background-color: #343a40;
+  gap: 1rem;
+  padding: 0.5rem;
+
+  & a {
+    @include primaryButton;
+    text-decoration: none;
+    margin-top: 0;
+    background-color: $menu-hoover-color;
+  }
+
+  & img {
+    width: 10%;
+    height: 10%;
+  }
+
 }

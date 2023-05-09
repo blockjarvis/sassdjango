@@ -7,23 +7,23 @@
 {% block content %}
     <section class="cards">
         <div class="cards__card">
-            <h2>Card 1</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus lorem ac dui aliquet interdum. Maecenas malesuada risus sit amet eleifend consectetur.</p>
-            <button>Read More</button>
+            <h2>Check on Git</h2>
+            <p>If you are interested in exploring how this website was developed, you can check its GitHub repository.</p>
+            <a href="https://github.com/rafaelmarianocorrea/sassdjango" target="_blank">View code</a>
         </div>
         <div class="cards__card">
-            <h2>Card 2</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus lorem ac dui aliquet interdum. Maecenas malesuada risus sit amet eleifend consectetur.</p>
-            <button>Read More</button>
+            <h2>Latest Django Project</h2>
+            <p>E-commerce website using Django during the Full Stack Web Development Program at The Code Institute.</p>
+            <a href="https://github.com/rafaelmarianocorrea/ciproject4" target="_blank">View code</a>
         </div>
         <div class="cards__card">
-            <h2>Card 3</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus lorem ac dui aliquet interdum. Maecenas malesuada risus sit amet eleifend consectetur.</p>
-            <button>Read More</button>
+            <h2>Let's Connect!</h2>
+            <p>if you have any questions or would like to connect, please don't hesitate to reach out to me!</p>
+            <a href="https://www.linkedin.com/in/rafaelmarianocorrea/" target="_blank">Linkedin Profile</a>
         </div>
     </section>
     <section class="content">
-        <h1>Welcome to My Blog</h1>
+        <h1>A Django-based Website with API Integration and Real-Time Bullion Prices</h1>
         <!-- TradingView Widget BEGIN -->
         <div class="tradingview-widget-container">
             <div id="tradingview_72393"></div>
@@ -49,7 +49,16 @@
             </script>
         </div>
         <!-- TradingView Widget END -->
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla faucibus lorem ac dui aliquet interdum. Maecenas malesuada risus sit amet eleifend consectetur.</p>
+        <h2>
+            About
+        </h2>
+        <p>
+            This website was created to showcase my skills using the Django framework, Python, SASS, JS, HTML, CSS, and API integration. Due to time limitations, I was only able to include one app, but with more time, I plan to add an authentication system and other apps such as a blog, purchase system, and contact page.
+            
+            To build this site, I used two APIs. The first API, provided by Metal Price API, is used in the header to display real-time bullion prices. I programmed it to show prices in ounces for three different metals in both GBP and EUR. The second API, provided by TradingView, is used to show the GOLD/GBP chart.
+            
+            In addition, the website offers a second language option (Portuguese).
+        </p>
     </section>
 
 {% endblock %}

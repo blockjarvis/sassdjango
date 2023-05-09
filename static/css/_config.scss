@@ -1,11 +1,20 @@
 @mixin flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
   
-  @mixin primaryFont {
-    font-family: 'Montserrat', sans-serif;
-    font-size:15px ;
-    font-weight: 400;
-  }
+@mixin primaryFont {
+  font-family: 'Montserrat', sans-serif;
+  font-size:15px ;
+  font-weight: 400;
+}
+
+@mixin primaryButton {
+  background-color: $secondary-color;
+  color: $primary-color;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
