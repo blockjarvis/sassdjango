@@ -13,7 +13,6 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato&display=swap">
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
         <script src="https://kit.fontawesome.com/ff9201489b.js" crossorigin="anonymous"></script>
     {% endblock %}    
 
@@ -23,19 +22,18 @@
 <body>
     <header>
         {% include 'includes/top-bar.html' %}
+        {% include 'includes/metal-api.html' %}
         {% include 'includes/pt-main-nav.html' %}
     </header>
     <main>
-        <p>hello world!</p>
         {% block content %}
         {% endblock %}
     </main>
     <footer>
-    <!-- ===== Social Media ==== -->
-        <div class="main-footer">
+        <div id="main-footer">
             <img src="{% static 'media/logo.png' %}">
-            <a href="https://www.youtube.com/" target="_blank"><span class="fa-brands fa-linkedin fa-lg"></span>LINKEDIN</a>
-            <a href="https://instagram.com/" target="_blank"><span class="fa-brands fa-github fa-lg"></span>GITHUB</a>
+            <a href="https://www.linkedin.com/in/rafaelmarianocorrea/" target="_blank"><span class="fa-brands fa-linkedin fa-lg"></span>   LINKEDIN</a>
+            <a href="https://github.com/rafaelmarianocorrea/" target="_blank"><span class="fa-brands fa-github fa-lg"></span>   GITHUB</a>
         </div>  
     </footer>
 </body>
