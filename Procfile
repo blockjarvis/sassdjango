@@ -1,0 +1,1 @@
+web gunicorn goldproject.wsgi:application --log-file -
