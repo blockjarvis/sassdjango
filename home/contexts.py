@@ -13,7 +13,7 @@ def metal_prices(request):
              'XAG' : 'Silver',
              'XPT' : 'Platinum' }
     
-    access_key = 'fdbddc254601e7b9b4e7b65a81bbd5d1'
+    access_key = os.environ.get('API_KEY', '')
 
     resp = requests.get(
         'https://api.metalpriceapi.com/v1/latest'+'?api_key='+access_key+'&base='+base_currency+'&currencies='+symbol)
